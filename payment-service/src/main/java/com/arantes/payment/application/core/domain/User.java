@@ -40,4 +40,8 @@ public class User {
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
+
+    public void debitBalance(BigDecimal value) {
+        this.balance = this.balance.subtract(value);
+    }
 }
