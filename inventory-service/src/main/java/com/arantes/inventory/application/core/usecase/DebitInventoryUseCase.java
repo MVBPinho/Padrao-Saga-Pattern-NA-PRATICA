@@ -2,11 +2,12 @@ package com.arantes.inventory.application.core.usecase;
 
 import com.arantes.inventory.application.core.domain.Sale;
 import com.arantes.inventory.application.core.domain.enums.SaleEvent;
+import com.arantes.inventory.application.ports.in.DebitInventoryInputPort;
 import com.arantes.inventory.application.ports.in.FindInventoryByProductIdInputPort;
 import com.arantes.inventory.application.ports.out.SendUpdateInventoryOutputPort;
 import com.arantes.inventory.application.ports.out.UpdateInventoryOutputPort;
 
-public class DebitInventoryUseCase {
+public class DebitInventoryUseCase implements DebitInventoryInputPort {
 
     private final FindInventoryByProductIdInputPort findInventoryByProductIdInputPort;
     private final UpdateInventoryOutputPort updateInventoryOutputPort;
@@ -21,6 +22,7 @@ public class DebitInventoryUseCase {
         this.sendUpdateInventoryOutputPort = sendUpdateInventoryOutputPort;
     }
 
+    @Override
     public void debit(Sale sale){
         var inventory = findInventoryByProductIdInputPort.find(sale.getProductId());
         if(inventory.getQuantity() < sale.getQuantity()) {
