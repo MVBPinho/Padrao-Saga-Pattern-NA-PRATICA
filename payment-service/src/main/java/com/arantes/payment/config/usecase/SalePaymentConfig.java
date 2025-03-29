@@ -1,7 +1,7 @@
 package com.arantes.payment.config.usecase;
 
 import com.arantes.payment.adapters.out.SavePaymentAdapter;
-import com.arantes.payment.adapters.out.SendValidatedPaymentAdapter;
+import com.arantes.payment.adapters.out.SendToKafkaAdapter;
 import com.arantes.payment.adapters.out.UpdateUserAdapter;
 import com.arantes.payment.application.core.usecase.FindUserByIdUseCase;
 import com.arantes.payment.application.core.usecase.SalePaymentUseCase;
@@ -16,9 +16,9 @@ public class SalePaymentConfig {
             FindUserByIdUseCase findUserByIdUseCase,
             UpdateUserAdapter updateUserAdapter,
             SavePaymentAdapter savePaymentAdapter,
-            SendValidatedPaymentAdapter sendValidatedPaymentAdapter
+            SendToKafkaAdapter sendToKafkaAdapter
     ) {
-        return new SalePaymentUseCase(findUserByIdUseCase, updateUserAdapter, savePaymentAdapter, sendValidatedPaymentAdapter);
+        return new SalePaymentUseCase(findUserByIdUseCase, updateUserAdapter, savePaymentAdapter, sendToKafkaAdapter);
     }
 
 }
