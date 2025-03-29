@@ -22,7 +22,7 @@ public class CreateSaleUseCase implements CreateSaleInputPort {
     @Override
     public void create(Sale sale) {
         sale.setStatus(SaleStatus.PENDING);
-        var saleResponse = saveSaleOutputPort.sale(sale);
+        var saleResponse = saveSaleOutputPort.save(sale);
         sendCreatedSaleOutputPort.send(saleResponse, SaleEvent.CREATED_SALE);
     }
 }

@@ -4,5 +4,5 @@ import com.arantes.sale.application.core.domain.Sale;
 
 public interface SaveSaleOutputPort {
 
-    Sale sale(Sale sale);
+    Sale save(Sale sale);
 }
