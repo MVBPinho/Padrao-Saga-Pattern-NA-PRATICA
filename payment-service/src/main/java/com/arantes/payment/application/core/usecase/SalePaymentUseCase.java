@@ -4,12 +4,12 @@ import com.arantes.payment.application.core.domain.Payment;
 import com.arantes.payment.application.core.domain.Sale;
 import com.arantes.payment.application.core.domain.enums.SaleEvent;
 import com.arantes.payment.application.ports.in.FindUserByIdInputPort;
-import com.arantes.payment.application.ports.out.SalePaymentOutputPort;
+import com.arantes.payment.application.ports.in.SalePaymentInputPort;
 import com.arantes.payment.application.ports.out.SavePaymentOutputPort;
 import com.arantes.payment.application.ports.out.SendValidatedPaymentOutputPort;
 import com.arantes.payment.application.ports.out.UpdateUserOutputPort;
 
-public class SalePaymentUseCase implements SalePaymentOutputPort {
+public class SalePaymentUseCase implements SalePaymentInputPort {
 
     private final FindUserByIdInputPort findUserByIdInputPort;
     private final UpdateUserOutputPort updateUserOutputPort;
