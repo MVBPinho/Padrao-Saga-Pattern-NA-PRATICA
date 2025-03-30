@@ -1,6 +1,6 @@
 package com.arantes.inventory.config.usecase;
 
-import com.arantes.inventory.adapters.out.SendUpdatedInventoryAdapter;
+import com.arantes.inventory.adapters.out.SendToKafkaAdapter;
 import com.arantes.inventory.adapters.out.UpdatedInventoryAdapter;
 import com.arantes.inventory.application.core.usecase.DebitInventoryUseCase;
 import com.arantes.inventory.application.core.usecase.FindInventoryByProductIdUseCase;
@@ -14,7 +14,7 @@ public class DebitInventoryConfig {
     public DebitInventoryUseCase debitInventoryUseCase(
             FindInventoryByProductIdUseCase findInventoryByProductIdUseCase,
             UpdatedInventoryAdapter updatedInventoryAdapter,
-            SendUpdatedInventoryAdapter sendUpdatedInventoryAdapter){
-        return new DebitInventoryUseCase(findInventoryByProductIdUseCase, updatedInventoryAdapter, sendUpdatedInventoryAdapter);
+            SendToKafkaAdapter sendToKafkaAdapter){
+        return new DebitInventoryUseCase(findInventoryByProductIdUseCase, updatedInventoryAdapter, sendToKafkaAdapter);
     }
 }
