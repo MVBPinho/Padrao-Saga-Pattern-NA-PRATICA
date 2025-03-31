@@ -6,7 +6,9 @@ import com.arantes.inventory.application.core.domain.enums.SaleEvent;
 import com.arantes.inventory.application.ports.out.SendToKafkaOutputPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SendToKafkaAdapter implements SendToKafkaOutputPort {
 
     @Autowired
