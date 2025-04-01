@@ -4,8 +4,8 @@
 
 ```bash
 docker ps
-docker exec -it "ID CONTAINER DO MYSQL"
-mysql -u root -p
+docker exec -it docker-db-1 mysql -u root -p
+senha: example
 ```
 
 ```sql
@@ -13,6 +13,7 @@ CREATE DATABASE saga_sale;
 CREATE DATABASE saga_inventory;
 CREATE DATABASE saga_payment;
 SHOW DATABASES;
+EXIT;
 ```
 
 ✅ **Executar os 3 projetos** para criar as tabelas de forma automática com o JPA.
@@ -69,6 +70,19 @@ INSERT INTO saga_payment.users VALUES (null, 50.00, 'Danilo');
 
 ---
 
+## 🎭 SAGA - Orquestração
+
+### ✅ Vantagens:
+✔️ Evita dependências cíclicas entre serviços.  
+✔️ Reduz a complexidade dos participantes.  
+✔️ Bom para fluxos de trabalho complexos envolvendo muitos participantes.  
+
+### ❌ Desvantagens:
+⚠️ Risco de concentrar muita lógica no orquestrador.  
+⚠️ Aumento de gastos com infraestrutura.  
+
+---
+
 # 🚀 Collection para cadastrar uma venda
 
 ```bash
@@ -81,5 +95,3 @@ curl --location 'http://localhost:8081/api/v1/sales' \
     "quantity" : 1
 }'
 ```
-
-🔥 Agora seu README está estilizado e organizado! 🚀
